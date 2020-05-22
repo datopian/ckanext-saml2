@@ -6,7 +6,7 @@ from saml2 import BINDING_HTTP_REDIRECT
 from saml2.saml import NAME_FORMAT_URI
 
 
-saml2_site_url = 'http://localhost:8080'
+saml2_site_url = 'https://login.test.max.gov'
 saml2_idp_url = 'https://login.test.max.gov'
 
 base = config.get('saml2.site_url', saml2_site_url)
@@ -24,6 +24,7 @@ CONFIG = {
                 'single_logout_service' : [(base + '/slo',
                                             BINDING_HTTP_REDIRECT)],
             },
+            "subject_data": ("memcached", "localhost:12121"),
             # Not sure about this stuff (not in config_max
             'required_attributes': [
                 'uid',

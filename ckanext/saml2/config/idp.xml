@@ -1,18 +1,101 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<ns0:EntitiesDescriptor xmlns:ns0="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ns1="http://www.w3.org/2000/09/xmldsig#"><ns0:EntityDescriptor entityID="urn:mace:umu.se:saml:ckan:idp"><ns0:IDPSSODescriptor WantAuthnRequestsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol"><ns0:KeyDescriptor use="signing"><ns1:KeyInfo><ns1:X509Data><ns1:X509Certificate>MIIC8jCCAlugAwIBAgIJAJHg2V5J31I8MA0GCSqGSIb3DQEBBQUAMFoxCzAJBgNV
-BAYTAlNFMQ0wCwYDVQQHEwRVbWVhMRgwFgYDVQQKEw9VbWVhIFVuaXZlcnNpdHkx
-EDAOBgNVBAsTB0lUIFVuaXQxEDAOBgNVBAMTB1Rlc3QgU1AwHhcNMDkxMDI2MTMz
-MTE1WhcNMTAxMDI2MTMzMTE1WjBaMQswCQYDVQQGEwJTRTENMAsGA1UEBxMEVW1l
-YTEYMBYGA1UEChMPVW1lYSBVbml2ZXJzaXR5MRAwDgYDVQQLEwdJVCBVbml0MRAw
-DgYDVQQDEwdUZXN0IFNQMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDkJWP7
-bwOxtH+E15VTaulNzVQ/0cSbM5G7abqeqSNSs0l0veHr6/ROgW96ZeQ57fzVy2MC
-FiQRw2fzBs0n7leEmDJyVVtBTavYlhAVXDNa3stgvh43qCfLx+clUlOvtnsoMiiR
-mo7qf0BoPKTj7c0uLKpDpEbAHQT4OF1HRYVxMwIDAQABo4G/MIG8MB0GA1UdDgQW
-BBQ7RgbMJFDGRBu9o3tDQDuSoBy7JjCBjAYDVR0jBIGEMIGBgBQ7RgbMJFDGRBu9
-o3tDQDuSoBy7JqFepFwwWjELMAkGA1UEBhMCU0UxDTALBgNVBAcTBFVtZWExGDAW
-BgNVBAoTD1VtZWEgVW5pdmVyc2l0eTEQMA4GA1UECxMHSVQgVW5pdDEQMA4GA1UE
-AxMHVGVzdCBTUIIJAJHg2V5J31I8MAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEF
-BQADgYEAMuRwwXRnsiyWzmRikpwinnhTmbooKm5TINPE7A7gSQ710RxioQePPhZO
-zkM27NnHTrCe2rBVg0EGz7QTd1JIwLPvgoj4VTi/fSha/tXrYUaqc9AqU1kWI4WN
-+vffBGQ09mo+6CffuFTZYeOhzP/2stAPwCTU4kxEoiy0KpZMANI=
-</ns1:X509Certificate></ns1:X509Data></ns1:KeyInfo></ns0:KeyDescriptor><ns0:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://localhost:8088/logout" /><ns0:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://localhost:8088/sso" /></ns0:IDPSSODescriptor><ns0:Organization><ns0:OrganizationName xml:lang="en">CKAN Identiteter</ns0:OrganizationName><ns0:OrganizationDisplayName xml:lang="en">CKAN Identiteter</ns0:OrganizationDisplayName><ns0:OrganizationURL xml:lang="en">http://www.example.com</ns0:OrganizationURL></ns0:Organization></ns0:EntityDescriptor></ns0:EntitiesDescriptor>
+<?xml version="1.0" encoding="UTF-8"?>
+<EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" entityID="https://login.max.gov/idp/shibboleth">
+
+    <IDPSSODescriptor protocolSupportEnumeration="urn:mace:shibboleth:1.0 urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+
+        <Extensions>
+            <shibmd:Scope regexp="false">max.gov</shibmd:Scope>
+        </Extensions>
+
+        <KeyDescriptor use="signing">
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>
+MIIDHzCCAgegAwIBAgIUPdRdrl5geFw6rcdLCg9XQr5fpqowDQYJKoZIhvcNAQEF
+BQAwGDEWMBQGA1UEAwwNbG9naW4ubWF4LmdvdjAeFw0xNTAyMjcxNzM0MjVaFw0z
+NTAyMjcxNzM0MjVaMBgxFjAUBgNVBAMMDWxvZ2luLm1heC5nb3YwggEiMA0GCSqG
+SIb3DQEBAQUAA4IBDwAwggEKAoIBAQCP/XwjR/J27ORJWOdK+Kfj3UE74x2OrrVp
+RvBGRkzv34YY7bSApD0s/WOz2h4fHa496LSZ8mc2ZmY6Tcmq2U1Sy+W6wECPr/Bj
+ZXpJPzAh3BBnrnO41lD8RIHBmpvPxPsOdrGwxOwVggg86fN31RI0gBHcbn3KPz7s
+K/9cHC55QL01qzpjhCCp1cZ2ZrEzfu3V1jpRoIsOYWIXlbj2Fn+rziOUrnUO+eMF
+pwDeifJqKUXBV7ZM8VejC9Z60uNmV2JPm9CHnjhCxul0fAChm+vPsw1DneoAw1m1
+LZk/SmuKqFVHuLVBn32I/lUuK/ugr8ww1FPMaqtdR46s5bTe+tYTAgMBAAGjYTBf
+MB0GA1UdDgQWBBRky4lFS031okDAefZKehA27/DZIDA+BgNVHREENzA1gg1sb2dp
+bi5tYXguZ292hiRodHRwczovL2xvZ2luLm1heC5nb3YvaWRwL3NoaWJib2xldGgw
+DQYJKoZIhvcNAQEFBQADggEBAD/dpBgAQMwbHakIDukwDOX2GBWu+l+jZt/1KqlZ
+YuxeNjRB54rZp70SOkARlUtWP8fdm6Lp1R1JxzqIsI8nde0lBCXw21lGQDzXVm+z
+rMmsS/KS9N1WM9Wqg0VJgTC4EHnK1OxfUVfH6gG6GV8+pSTv2tM2SKBiG5cQ9g/i
+2mh/M8aPg05TA+IZCMOnKIgnkEq3YhI2OS80a9qrSKZh8X4/+DklGHWzbdOV8pW0
+CQ3LQo/QLeCJHTdqga2i5y0aKcyX3d7pNlJZh1PMInz9Lmd4WFHllaDgRxWsWCRW
+x1DFvVHKK/lPRTV+5Emt3dzy+gVd1ZnSxCVbkt2SswlPdGI=
+
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+
+        <!-- <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://login.max.gov/idp/profile/SAML1/SOAP/ArtifactResolution" index="1"/>
+
+        <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://login.max.gov/idp/profile/SAML2/SOAP/ArtifactResolution" index="2"/>
+
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.max.gov/idp/profile/SAML2/Redirect/SLO" />
+
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://login.max.gov/idp/profile/SAML2/POST/SLO" />
+
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://login.max.gov/idp/profile/SAML2/SOAP/SLO" />
+
+        <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat> -->
+
+        <SingleSignOnService Binding="urn:mace:shibboleth:1.0:profiles:AuthnRequest" Location="https://login.max.gov/idp/profile/Shibboleth/SSO"/>
+
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://login.max.gov/idp/profile/SAML2/POST/SSO"/>
+
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://login.max.gov/idp/profile/SAML2/POST-SimpleSign/SSO"/>
+
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.max.gov/idp/profile/SAML2/Redirect/SSO"/>
+    </IDPSSODescriptor>
+<!--
+    <AttributeAuthorityDescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+
+        <Extensions>
+            <shibmd:Scope regexp="false">max.gov</shibmd:Scope>
+        </Extensions>
+
+        <KeyDescriptor use="signing">
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>
+MIIDHzCCAgegAwIBAgIUPdRdrl5geFw6rcdLCg9XQr5fpqowDQYJKoZIhvcNAQEF
+BQAwGDEWMBQGA1UEAwwNbG9naW4ubWF4LmdvdjAeFw0xNTAyMjcxNzM0MjVaFw0z
+NTAyMjcxNzM0MjVaMBgxFjAUBgNVBAMMDWxvZ2luLm1heC5nb3YwggEiMA0GCSqG
+SIb3DQEBAQUAA4IBDwAwggEKAoIBAQCP/XwjR/J27ORJWOdK+Kfj3UE74x2OrrVp
+RvBGRkzv34YY7bSApD0s/WOz2h4fHa496LSZ8mc2ZmY6Tcmq2U1Sy+W6wECPr/Bj
+ZXpJPzAh3BBnrnO41lD8RIHBmpvPxPsOdrGwxOwVggg86fN31RI0gBHcbn3KPz7s
+K/9cHC55QL01qzpjhCCp1cZ2ZrEzfu3V1jpRoIsOYWIXlbj2Fn+rziOUrnUO+eMF
+pwDeifJqKUXBV7ZM8VejC9Z60uNmV2JPm9CHnjhCxul0fAChm+vPsw1DneoAw1m1
+LZk/SmuKqFVHuLVBn32I/lUuK/ugr8ww1FPMaqtdR46s5bTe+tYTAgMBAAGjYTBf
+MB0GA1UdDgQWBBRky4lFS031okDAefZKehA27/DZIDA+BgNVHREENzA1gg1sb2dp
+bi5tYXguZ292hiRodHRwczovL2xvZ2luLm1heC5nb3YvaWRwL3NoaWJib2xldGgw
+DQYJKoZIhvcNAQEFBQADggEBAD/dpBgAQMwbHakIDukwDOX2GBWu+l+jZt/1KqlZ
+YuxeNjRB54rZp70SOkARlUtWP8fdm6Lp1R1JxzqIsI8nde0lBCXw21lGQDzXVm+z
+rMmsS/KS9N1WM9Wqg0VJgTC4EHnK1OxfUVfH6gG6GV8+pSTv2tM2SKBiG5cQ9g/i
+2mh/M8aPg05TA+IZCMOnKIgnkEq3YhI2OS80a9qrSKZh8X4/+DklGHWzbdOV8pW0
+CQ3LQo/QLeCJHTdqga2i5y0aKcyX3d7pNlJZh1PMInz9Lmd4WFHllaDgRxWsWCRW
+x1DFvVHKK/lPRTV+5Emt3dzy+gVd1ZnSxCVbkt2SswlPdGI=
+
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+
+        <AttributeService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://login.max.gov/idp/profile/SAML1/SOAP/AttributeQuery"/>
+
+        <AttributeService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://login.max.gov/idp/profile/SAML2/SOAP/AttributeQuery"/>
+
+        <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+
+    </AttributeAuthorityDescriptor>
+     -->
+</EntityDescriptor>
